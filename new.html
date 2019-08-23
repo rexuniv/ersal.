@@ -1,0 +1,17 @@
+<% @user.errors.full_messages.each do |message| %>
+    <div class="form-error">
+      <%= message %>
+    </div>
+  <% end %>
+  
+  <%= form_tag("/users/create1") do %>
+    <p>ユーザー名</p>
+    <input name="name" value="<%= @user.name %>">
+    <p>アカウントID</p>
+    <input name="account" value="<%= @user.account %>">
+    <p>パスワード</p>
+    <input type="password" name="password" value="<%= @user.password %>">
+    <input type="submit" value="次へ">
+  <% end %>
+
+  <%=link_to("ログインはこちら","/login")%>
